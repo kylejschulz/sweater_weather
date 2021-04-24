@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GeocodeService, model: :type do
+RSpec.describe GeocodeService, type: :model do
   describe "class methods" do
     it "#convert_city_to_lat_long", :vcr do
       response = GeocodeService.convert_city_to_lat_long('denver,co')

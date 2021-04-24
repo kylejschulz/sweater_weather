@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe OpenWeatherService, model: :type do
+RSpec.describe OpenWeatherService, type: :model do
   describe "class methods" do
     it "#get_weather", :vcr do
       lat = 39.738453
