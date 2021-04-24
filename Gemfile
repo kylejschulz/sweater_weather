@@ -16,6 +16,7 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
+gem 'faraday'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -43,6 +44,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'fast_jsonapi'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
