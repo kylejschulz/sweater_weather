@@ -1,4 +1,4 @@
-class Daily
+class DailyWeather
   attr_reader :datetime,
               :sunrise,
               :sunset,

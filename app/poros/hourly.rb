@@ -1,4 +1,4 @@
-class Hourly
+class HourlyWeather
   attr_reader :time,
               :termperature,
               :conditions,

@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :api do
+    resources :v1 do
+      resource :forecast, only: [:index]
+      resource :backgrounds, only: [:index]
+      resource :sessions, only: [:create]
+      resource :users, only: [:create]
+    end
+  end
 end

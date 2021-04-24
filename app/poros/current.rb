@@ -1,4 +1,4 @@
-class Current
+class CurrentWeather
   attr_reader :datetime,
               :sunrise,
               :sunset,
