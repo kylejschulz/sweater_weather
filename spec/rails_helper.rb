@@ -68,3 +68,6 @@ VCR.configure do |config|
   config.ignore_localhost = true
   config.configure_rspec_metadata!
 end
+def parse(response)
+  JSON.parse(response.body, symbolize_names: true)
+end

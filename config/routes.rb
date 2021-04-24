@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :api do
-    resources :v1 do
-      resource :forecast, only: [:index]
-      resource :backgrounds, only: [:index]
-      resource :sessions, only: [:create]
-      resource :users, only: [:create]
+  namespace :api do
+    namespace :v1 do
+      resources :forecast, only: [:index]
+      resources :backgrounds, only: [:index]
+      resources :sessions, only: [:create]
+      resources :users, only: [:create]
     end
   end
 end

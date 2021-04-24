@@ -5,6 +5,7 @@ class OpenWeatherService
       f.params['lat'] = lat
       f.params['lon'] = lon
       f.params['exclude'] = 'minutely'
+      f.params['units'] = 'imperial'
     end
     parsed = parse(response)
   end

@@ -1,10 +1,11 @@
-class ForecastController < ApplicationController
+class Api::V1::ForecastController < ApplicationController
   def index
-    forecast = ForestFacade.get_forecast(forecast_params[:location])
-    require "pry"; binding.pry
+    forecast = ForecastFacade.get_forecast(forecast_params[:location])
+    serialized = ForecastSerializer.new(forecast)
+    render json: ForecastSerializer.new(forecast)
   end
 
-  private 
+  private
 
   def forecast_params
     params.permit(:location)
