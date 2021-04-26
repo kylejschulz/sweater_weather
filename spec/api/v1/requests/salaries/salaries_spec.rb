@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "When i make a salary request" do
   describe "it can return happy paths" do
-    it "returns all the appropriate data including, ", :vcr do
-      get '/api/v1/salaries?location=denver,co'
+    it "returns all the appropriate data including, " do
+      get '/api/v1/salaries?location=denver'
       expect(response).to be_successful
 
       response = parse(@response)

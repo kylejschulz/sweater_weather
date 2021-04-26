@@ -4,7 +4,6 @@ class GeocodeService
       f.params["key"] = "9DNRSfALshlNLG8C1tdJE9CW8VZAiRqe"
       f.params['location'] = city
     end
-    require "pry"; binding.pry
     parse(response)[:results].first[:locations].first[:latLng]
   end
 

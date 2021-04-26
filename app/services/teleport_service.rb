@@ -1,15 +1,13 @@
 class TeleportService
   def self.get_ua_id(city)
     response = Faraday.get("https://api.teleport.org/api/urban_areas/slug:#{city}/")
-    ua_id = parse(response)
-    require "pry"; binding.pry
+    ua_id = parse(response)[:ua_id]
   end
 
 
   def self.get_salary_info(ua_id)
     response = Faraday.get("https://api.teleport.org/api/urban_areas/teleport%3A#{ua_id}/salaries/")
     parse(response)
-    require "pry"; binding.pry
   end
 
   private
