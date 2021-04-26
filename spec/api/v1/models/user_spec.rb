@@ -1,6 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe ForecastFacade, model: :type do
+RSpec.describe User, model: :type do
+  describe "validations" do
+    it { should validates_presence_of :email }
+    it { should validates_presence_of :password }
+    it { should validates_presence_of :api_key }
+    it { should have_secure_password }
+
+  end
   describe "class methods" do
     it "#get_forecast", :vcr do
       forecast = ForecastFacade.get_forecast('denver,co')

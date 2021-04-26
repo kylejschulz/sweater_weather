@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe ForecastFacade, model: :type do
-  describe "class methods" do
-    it "#get_forecast", :vcr do
-      forecast = ForecastFacade.get_forecast('denver,co')
+RSpec.describe Forecast, type: :model do
+  describe "it can have attributes" do
+    it "has attributes", :vcr do
+      forecast = ForecastFacade.get_forecast("denver,co")
 
       expect(forecast).to be_a(Forecast)
       expect(forecast.id).to be_nil

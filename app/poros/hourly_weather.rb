@@ -1,6 +1,6 @@
 class HourlyWeather
   attr_reader :time,
-              :termperature,
+              :temperature,
               :conditions,
               :icon
   def initialize(data)

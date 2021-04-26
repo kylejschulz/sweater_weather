@@ -1,0 +1,164 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.flickr.com/services/rest?api_key=a14ff48732412aa961d9b773ca494e7d&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=1&text=denver,%20co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '283'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 25 Apr 2021 23:51:33 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Tue, 25-May-2021 23:51:33 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ec8b1bfbf511818c606f196b49f871e2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD50-C2
+      X-Amz-Cf-Id:
+      - Cf9FLQdzIKtKoSe2PvoyvbRdXcxy-0ZPKtUqd9K8o2v3nu4f9bp0Pw==
+    body:
+      encoding: UTF-8
+      string: '{"photos":{"page":1,"pages":288680,"perpage":1,"total":"288680","photo":[{"id":"51137554072","owner":"192565815@N03","secret":"cedd17649b","server":"65535","farm":66,"title":"Detoxification
+        Centers at Phoenix, AZ and Denver, CO","ispublic":1,"isfriend":0,"isfamily":0}]},"stat":"ok"}'
+  recorded_at: Sun, 25 Apr 2021 23:51:31 GMT
+- request:
+    method: get
+    uri: https://www.flickr.com/services/rest?api_key=a14ff48732412aa961d9b773ca494e7d&format=json&method=flickr.photos.getinfo&nojsoncallback=1&photo_id=51137554072
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sun, 25 Apr 2021 23:51:33 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Tue, 25-May-2021 23:51:33 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e67eec39bafe7d4b59266632bc2a9886.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD50-C2
+      X-Amz-Cf-Id:
+      - 4FuAdqS4F6BOfRu85gBHwKDKCqq9j0MOnETUDkC4TQS3RoE5mWpEnw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photo":{"id":"51137554072","secret":"cedd17649b","server":"65535","farm":66,"dateuploaded":"1619382397","isfavorite":0,"license":"0","safety_level":"0","rotation":0,"originalsecret":"1a411df4f2","originalformat":"jpg","owner":{"nsid":"192565815@N03","username":"info.gallusdetox89","realname":"Gallus
+        Detox","location":"","iconserver":"65535","iconfarm":66,"path_alias":null},"title":{"_content":"Detoxification
+        Centers at Phoenix, AZ and Denver, CO"},"description":{"_content":"The liquor
+        and medicine detoxification apps at our <a href=\"https:\/\/www.gallusdetox.com\/locations\/arizona\/phoenix-detox-center\/\"
+        rel=\"noreferrer nofollow\">Gallus Detox<\/a> Phoenix, AZ and Denver, CO-area
+        centers give you time for you to cure, both emotionally and physically. Currently
+        incorporated, clinically researched maintenance which helps the body adapt
+        to modify, even though enabling your own mind find new tactics to handle all
+        the stressors on your own life."},"visibility":{"ispublic":1,"isfriend":0,"isfamily":0},"dates":{"posted":"1619382397","taken":"2021-04-25
+        13:01:13","takengranularity":0,"takenunknown":"1","lastupdate":"1619382397"},"views":"0","editability":{"cancomment":0,"canaddmeta":0},"publiceditability":{"cancomment":1,"canaddmeta":0},"usage":{"candownload":1,"canblog":0,"canprint":0,"canshare":1},"comments":{"_content":"0"},"notes":{"note":[]},"people":{"haspeople":0},"tags":{"tag":[{"id":"192542761-51137554072-519407414","author":"192565815@N03","authorname":"info.gallusdetox89","raw":"denver
+        detox center","_content":"denverdetoxcenter","machine_tag":false},{"id":"192542761-51137554072-519407419","author":"192565815@N03","authorname":"info.gallusdetox89","raw":"denver
+        detox","_content":"denverdetox","machine_tag":false},{"id":"192542761-51137554072-519407424","author":"192565815@N03","authorname":"info.gallusdetox89","raw":"detox
+        denver","_content":"detoxdenver","machine_tag":false},{"id":"192542761-51137554072-519407429","author":"192565815@N03","authorname":"info.gallusdetox89","raw":"detox
+        denver co","_content":"detoxdenverco","machine_tag":false},{"id":"192542761-51137554072-519407434","author":"192565815@N03","authorname":"info.gallusdetox89","raw":"colorado
+        detox","_content":"coloradodetox","machine_tag":false},{"id":"192542761-51137554072-518588332","author":"192565815@N03","authorname":"info.gallusdetox89","raw":"phoenix
+        detox center","_content":"phoenixdetoxcenter","machine_tag":false},{"id":"192542761-51137554072-342477651","author":"192565815@N03","authorname":"info.gallusdetox89","raw":"phoenix
+        detox","_content":"phoenixdetox","machine_tag":false},{"id":"192542761-51137554072-518588337","author":"192565815@N03","authorname":"info.gallusdetox89","raw":"detox
+        phoenix","_content":"detoxphoenix","machine_tag":false}]},"urls":{"url":[{"type":"photopage","_content":"https:\/\/www.flickr.com\/photos\/192565815@N03\/51137554072\/"}]},"media":"photo"},"stat":"ok"}'
+  recorded_at: Sun, 25 Apr 2021 23:51:31 GMT
+- request:
+    method: get
+    uri: https://www.flickr.com/services/rest?api_key=a14ff48732412aa961d9b773ca494e7d&format=json&method=flickr.photos.getinfo&nojsoncallback=1&photo_id%5Bphoto%5D%5Bcomments%5D%5B_content%5D=0&photo_id%5Bphoto%5D%5Bdates%5D%5Blastupdate%5D=1619382397&photo_id%5Bphoto%5D%5Bdates%5D%5Bposted%5D=1619382397&photo_id%5Bphoto%5D%5Bdates%5D%5Btaken%5D=2021-04-25%2013:01:13&photo_id%5Bphoto%5D%5Bdates%5D%5Btakengranularity%5D=0&photo_id%5Bphoto%5D%5Bdates%5D%5Btakenunknown%5D=1&photo_id%5Bphoto%5D%5Bdateuploaded%5D=1619382397&photo_id%5Bphoto%5D%5Bdescription%5D%5B_content%5D=The%20liquor%20and%20medicine%20detoxification%20apps%20at%20our%20%3Ca%20href=%22https://www.gallusdetox.com/locations/arizona/phoenix-detox-center/%22%20rel=%22noreferrer%20nofollow%22%3EGallus%20Detox%3C/a%3E%20Phoenix,%20AZ%20and%20Denver,%20CO-area%20centers%20give%20you%20time%20for%20you%20to%20cure,%20both%20emotionally%20and%20physically.%20Currently%20incorporated,%20clinically%20researched%20maintenance%20which%20helps%20the%20body%20adapt%20to%20modify,%20even%20though%20enabling%20your%20own%20mind%20find%20new%20tactics%20to%20handle%20all%20the%20stressors%20on%20your%20own%20life.&photo_id%5Bphoto%5D%5Beditability%5D%5Bcanaddmeta%5D=0&photo_id%5Bphoto%5D%5Beditability%5D%5Bcancomment%5D=0&photo_id%5Bphoto%5D%5Bfarm%5D=66&photo_id%5Bphoto%5D%5Bid%5D=51137554072&photo_id%5Bphoto%5D%5Bisfavorite%5D=0&photo_id%5Bphoto%5D%5Blicense%5D=0&photo_id%5Bphoto%5D%5Bmedia%5D=photo&&photo_id%5Bphoto%5D%5Boriginalformat%5D=jpg&photo_id%5Bphoto%5D%5Boriginalsecret%5D=1a411df4f2&photo_id%5Bphoto%5D%5Bowner%5D%5Biconfarm%5D=66&photo_id%5Bphoto%5D%5Bowner%5D%5Biconserver%5D=65535&photo_id%5Bphoto%5D%5Bowner%5D%5Blocation%5D=&photo_id%5Bphoto%5D%5Bowner%5D%5Bnsid%5D=192565815@N03&photo_id%5Bphoto%5D%5Bowner%5D%5Bpath_alias%5D&photo_id%5Bphoto%5D%5Bowner%5D%5Brealname%5D=Gallus%20Detox&photo_id%5Bphoto%5D%5Bowner%5D%5Busername%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Bpeople%5D%5Bhaspeople%5D=0&photo_id%5Bphoto%5D%5Bpubliceditability%5D%5Bcanaddmeta%5D=0&photo_id%5Bphoto%5D%5Bpubliceditability%5D%5Bcancomment%5D=1&photo_id%5Bphoto%5D%5Brotation%5D=0&photo_id%5Bphoto%5D%5Bsafety_level%5D=0&photo_id%5Bphoto%5D%5Bsecret%5D=cedd17649b&photo_id%5Bphoto%5D%5Bserver%5D=65535&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B0%5D%5B_content%5D=denverdetoxcenter&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B0%5D%5Bauthor%5D=192565815@N03&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B0%5D%5Bauthorname%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B0%5D%5Bid%5D=192542761-51137554072-519407414&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B0%5D%5Bmachine_tag%5D=false&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B0%5D%5Braw%5D=denver%20detox%20center&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B1%5D%5B_content%5D=denverdetox&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B1%5D%5Bauthor%5D=192565815@N03&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B1%5D%5Bauthorname%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B1%5D%5Bid%5D=192542761-51137554072-519407419&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B1%5D%5Bmachine_tag%5D=false&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B1%5D%5Braw%5D=denver%20detox&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B2%5D%5B_content%5D=detoxdenver&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B2%5D%5Bauthor%5D=192565815@N03&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B2%5D%5Bauthorname%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B2%5D%5Bid%5D=192542761-51137554072-519407424&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B2%5D%5Bmachine_tag%5D=false&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B2%5D%5Braw%5D=detox%20denver&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B3%5D%5B_content%5D=detoxdenverco&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B3%5D%5Bauthor%5D=192565815@N03&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B3%5D%5Bauthorname%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B3%5D%5Bid%5D=192542761-51137554072-519407429&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B3%5D%5Bmachine_tag%5D=false&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B3%5D%5Braw%5D=detox%20denver%20co&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B4%5D%5B_content%5D=coloradodetox&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B4%5D%5Bauthor%5D=192565815@N03&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B4%5D%5Bauthorname%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B4%5D%5Bid%5D=192542761-51137554072-519407434&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B4%5D%5Bmachine_tag%5D=false&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B4%5D%5Braw%5D=colorado%20detox&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B5%5D%5B_content%5D=phoenixdetoxcenter&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B5%5D%5Bauthor%5D=192565815@N03&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B5%5D%5Bauthorname%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B5%5D%5Bid%5D=192542761-51137554072-518588332&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B5%5D%5Bmachine_tag%5D=false&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B5%5D%5Braw%5D=phoenix%20detox%20center&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B6%5D%5B_content%5D=phoenixdetox&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B6%5D%5Bauthor%5D=192565815@N03&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B6%5D%5Bauthorname%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B6%5D%5Bid%5D=192542761-51137554072-342477651&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B6%5D%5Bmachine_tag%5D=false&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B6%5D%5Braw%5D=phoenix%20detox&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B7%5D%5B_content%5D=detoxphoenix&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B7%5D%5Bauthor%5D=192565815@N03&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B7%5D%5Bauthorname%5D=info.gallusdetox89&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B7%5D%5Bid%5D=192542761-51137554072-518588337&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B7%5D%5Bmachine_tag%5D=false&photo_id%5Bphoto%5D%5Btags%5D%5Btag%5D%5B7%5D%5Braw%5D=detox%20phoenix&photo_id%5Bphoto%5D%5Btitle%5D%5B_content%5D=Detoxification%20Centers%20at%20Phoenix,%20AZ%20and%20Denver,%20CO&photo_id%5Bphoto%5D%5Burls%5D%5Burl%5D%5B0%5D%5B_content%5D=https://www.flickr.com/photos/192565815@N03/51137554072/&photo_id%5Bphoto%5D%5Burls%5D%5Burl%5D%5B0%5D%5Btype%5D=photopage&photo_id%5Bphoto%5D%5Busage%5D%5Bcanblog%5D=0&photo_id%5Bphoto%5D%5Busage%5D%5Bcandownload%5D=1&photo_id%5Bphoto%5D%5Busage%5D%5Bcanprint%5D=0&photo_id%5Bphoto%5D%5Busage%5D%5Bcanshare%5D=1&photo_id%5Bphoto%5D%5Bviews%5D=0&photo_id%5Bphoto%5D%5Bvisibility%5D%5Bisfamily%5D=0&photo_id%5Bphoto%5D%5Bvisibility%5D%5Bisfriend%5D=0&photo_id%5Bphoto%5D%5Bvisibility%5D%5Bispublic%5D=1&photo_id%5Bstat%5D=ok
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '52'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 25 Apr 2021 23:51:33 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Tue, 25-May-2021 23:51:33 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6d327e3d2da66fac5e95b3d2d2e18853.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD50-C2
+      X-Amz-Cf-Id:
+      - SfTwdTVhYW69kDwyWAnfC7gXW0Qvs4SsLJgX6xdp0N1iyOPRM9xEWA==
+    body:
+      encoding: UTF-8
+      string: '{"stat":"fail","code":1,"message":"Photo not found"}'
+  recorded_at: Sun, 25 Apr 2021 23:51:31 GMT
+recorded_with: VCR 6.0.0
