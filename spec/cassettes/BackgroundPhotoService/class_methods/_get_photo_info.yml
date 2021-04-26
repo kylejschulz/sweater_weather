@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.flickr.com/services/rest?api_key=a14ff48732412aa961d9b773ca494e7d&format=json&method=flickr.photos.getinfo&nojsoncallback=1&photo_id=51123309253
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sun, 25 Apr 2021 22:46:12 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Tue, 25-May-2021 22:46:12 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 16f689172b396b7e266a396b6b5d6755.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD50-C2
+      X-Amz-Cf-Id:
+      - PCpl7_yw_uM5FE_F4EnRacVjfeSLNgdIyB9VGdUAncLhWA1aBYmPkw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photo":{"id":"51123309253","secret":"984e8a90dc","server":"65535","farm":66,"dateuploaded":"1618760523","isfavorite":0,"license":"0","safety_level":"0","rotation":0,"originalsecret":"ab17ab90b0","originalformat":"jpg","owner":{"nsid":"56683178@N06","username":"blupenny99","realname":"tom
+        byrnas","location":"Brighton, CO, USA","iconserver":"65535","iconfarm":66,"path_alias":"20tcb10"},"title":{"_content":"C&S
+        632 at Logan and Buchtel in Denver, CO 2\/1957  Photographer Unknown"},"description":{"_content":"The
+        slide mount says &quot;Logan and Buchtel&quot; but there is another view from
+        this same location in this album that states it is Downing St.  I am going
+        to say that this is actually Downing and Buchtel because the other intersection
+        also has Mississippi at that point.  Regardless this scene has changed so
+        much that it might as well be on the planet Mars.  Thoughts???  "},"visibility":{"ispublic":1,"isfriend":0,"isfamily":0},"dates":{"posted":"1618760523","taken":"1957-02-01
+        00:00:00","takengranularity":"4","takenunknown":"0","lastupdate":"1619101837"},"views":"184","editability":{"cancomment":0,"canaddmeta":0},"publiceditability":{"cancomment":1,"canaddmeta":0},"usage":{"candownload":1,"canblog":0,"canprint":0,"canshare":0},"comments":{"_content":"1"},"notes":{"note":[]},"people":{"haspeople":0},"tags":{"tag":[{"id":"56637856-51123309253-19860","author":"56683178@N06","authorname":"blupenny99","raw":"C&S","_content":"cs","machine_tag":0},{"id":"56637856-51123309253-11869493","author":"56683178@N06","authorname":"blupenny99","raw":"Colorado
+        & Southern","_content":"coloradosouthern","machine_tag":0},{"id":"56637856-51123309253-250381","author":"56683178@N06","authorname":"blupenny99","raw":"Steam
+        Locomotive","_content":"steamlocomotive","machine_tag":0},{"id":"56637856-51123309253-85148","author":"56683178@N06","authorname":"blupenny99","raw":"Denver,
+        CO","_content":"denverco","machine_tag":0},{"id":"56637856-51123309253-3157","author":"56683178@N06","authorname":"blupenny99","raw":"Colorado","_content":"colorado","machine_tag":0},{"id":"56637856-51123309253-8854","author":"56683178@N06","authorname":"blupenny99","raw":"Trains","_content":"trains","machine_tag":0},{"id":"56637856-51123309253-92338","author":"56683178@N06","authorname":"blupenny99","raw":"Railroads","_content":"railroads","machine_tag":0}]},"urls":{"url":[{"type":"photopage","_content":"https:\/\/www.flickr.com\/photos\/20tcb10\/51123309253\/"}]},"media":"photo"},"stat":"ok"}'
+  recorded_at: Sun, 25 Apr 2021 22:46:10 GMT
+recorded_with: VCR 6.0.0
