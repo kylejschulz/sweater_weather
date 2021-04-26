@@ -5,8 +5,8 @@ RSpec.describe "When i make a salary request" do
     it "returns all the appropriate data including, " do
       get '/api/v1/salaries?location=denver'
       expect(response).to be_successful
-
       response = parse(@response)
+      require "pry"; binding.pry
       expect(response[:data].count).to eq(3)
       expect(response[:data].keys).to eq([:id, :type, :attributes])
       expect(response[:data][:id]).to be_nil
