@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.flickr.com/services/rest?api_key=a14ff48732412aa961d9b773ca494e7d&format=json&method=flickr.photos.getinfo&nojsoncallback=1&photo_id=-123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '74'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 26 Apr 2021 17:02:21 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Wed, 26-May-2021 17:02:21 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 88b63cb2f8aab28c7291262ffc15282f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C1
+      X-Amz-Cf-Id:
+      - bmZi782YPfb_wrZ4Qg0s27YoV8qxz5OPhEH13MIVgTTxqFS_hVLNxw==
+    body:
+      encoding: UTF-8
+      string: '{"stat":"fail","code":1,"message":"Photo \"-123\" not found (invalid
+        ID)"}'
+  recorded_at: Mon, 26 Apr 2021 17:02:21 GMT
+recorded_with: VCR 6.0.0
