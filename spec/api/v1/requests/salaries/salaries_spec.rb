@@ -18,3 +18,5 @@ RSpec.describe "When i make a salary request" do
     end
   end
 end
+
+# bundle exec rspec spec/api/v1/requests/salaries

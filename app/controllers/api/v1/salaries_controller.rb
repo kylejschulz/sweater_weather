@@ -14,6 +14,7 @@ class Api::V1::SalariesController < ApplicationController
     jobs = specific_salary_data.map do |data|
       Job.new(data)
     end
+    require "pry"; binding.pry
     salary = Salary.new(destination, weather_data, jobs)
     render json: SalarySerializer.new(salary), status: 200
   end
