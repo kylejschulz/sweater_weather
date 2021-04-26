@@ -9,10 +9,9 @@ RSpec.describe Salaries, type: :model do
                        :sunrise=>1619438778,
                        :sunset=>1619488125,
                        :temp=>71.02,
-                       :weather=>[{:id=>802, :main=>"Clouds", :description=>"scattered clouds", :icon=>"03d"}]},
-      ua_id = TeleportService.get_ua_id('denver')
-      require "pry"; binding.pry
-      all_salary_data =TeleportService.get_salary_info(ua_id)
+                       :weather=>[{:id=>802, :main=>"Clouds", :description=>"scattered clouds", :icon=>"03d"}]}}
+
+      all_salary_data =TeleportService.get_salary_info("9xj65")
       salary_data = all_salary_data[:salaries]
       specific_salary_data = []
        salary_data.each do |position|
@@ -28,7 +27,7 @@ RSpec.describe Salaries, type: :model do
       expect(salaries).to be_a(Salaries)
       expect(salaries.destination).to eq("denver")
       expect(salaries.id).to be_nil
-      expect(salaries.forecast).to eq({:summary=>"scattered clouds", :temperature=>70.97})
+      expect(salaries.forecast).to eq({:summary=>"scattered clouds", :temperature=>71.02})
       expect(salaries.salaries.first.title).to eq("Data Analyst")
       expect(salaries.salaries.first.min).to eq("$42878.34")
       expect(salaries.salaries.first.max).to eq("$62106.69")
