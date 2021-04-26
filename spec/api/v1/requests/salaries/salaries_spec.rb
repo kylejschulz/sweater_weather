@@ -4,7 +4,7 @@ RSpec.describe "When i make a salary request" do
   describe "it can return happy paths" do
     it "returns all the appropriate data including, " do
       get '/api/v1/salaries?location=denver'
-      expect(response).to be_successful
+      expect(@response).to be_successful
       response = parse(@response)
 
       expect(response[:data].count).to eq(3)
@@ -15,6 +15,16 @@ RSpec.describe "When i make a salary request" do
       expect(response[:data][:attributes][:destination]).to eq("denver")
       expect(response[:data][:attributes][:forecast].keys).to eq([:summary, :temperature])
       expect(response[:data][:attributes][:salaries]).to be_an(Array)
+    end
+  end
+
+  describe "it can return sad paths" do
+    it "returns all the appropriate data including, " do
+      get '/api/v1/salaries?location=  '
+
+      expect(@response).to_not be_successful
+      expect(@response.body).to eq("please enter a valid city")
+      expect(@response.status).to eq(422)
     end
   end
 end
