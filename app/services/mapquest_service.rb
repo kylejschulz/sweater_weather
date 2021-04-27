@@ -15,12 +15,9 @@ class MapquestService
       f.params['outFormat'] = 'json'
       f.params['ambiguities'] = 'ignore'
       f.params['routeType'] = 'fastest'
-      f.params['doReverseGeocode'] = false
-      f.params['EnhancedNarrative'] = false
-      f.params['avoidTimedConditions'] = false
+      f.params['unit'] = 'm'
     end
     parse(response)
-    require "pry"; binding.pry
   end
 
   private
