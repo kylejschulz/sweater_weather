@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe GeocodeService, type: :model do
+RSpec.describe MapquestService, type: :model do
   describe "class methods" do
     it "#convert_city_to_lat_long", :vcr do
-      response = GeocodeService.convert_city_to_lat_long('denver,co')
+      response = MapquestService.convert_city_to_lat_long('denver,co')
 
       expect(response.keys).to eq([:lat, :lng])
       expect(response.values).to eq([39.738453, -104.984853])
