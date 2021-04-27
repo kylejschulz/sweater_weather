@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "When i make a forecast request" do
+RSpec.describe "When i make a road trip request" do
   before :each do
     @user = User.create!(email: 'kyle@example.com', password: 'password')
   end
   describe "it can return happy paths" do
     it "returns all the appropriate data", :vcr do
-      headers = { "CONTENT_TYPE" => "application/json" }
-      post '/api/v1/road_trip?location=denver,co', :params => "{ 'origin': 'Denver,CO', 'destination': 'Pueblo,CO', 'api_key': '#{@user.api_key}' }", :headers => headers
+      headers = { "CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
+      params = { 'origin': 'Denver,CO', 'destination': 'Pueblo,CO', 'api_key': @user.api_key }
+      post '/api/v1/road_trip', :params => params.to_json, :headers => headers
       require "pry"; binding.pry
       expect(response).to be_successful
       response = parse(@response)
