@@ -72,6 +72,9 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.ignore_localhost = true
   config.configure_rspec_metadata!
+  config.filter_sensitive_data(ENV['open_weather_api_key']) { "don't look" }
+  config.filter_sensitive_data(ENV['mapquest_api_key']) { "don't look" }
+  config.filter_sensitive_data(ENV['flickr_api_key']) { "don't look" }
 end
 def parse(response)
   JSON.parse(response.body, symbolize_names: true)
