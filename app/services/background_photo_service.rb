@@ -1,20 +1,25 @@
 class BackgroundPhotoService
-  def self.get_photo_id(city)
+  def self.get_photo_url(city)
     response = Faraday.get("https://www.flickr.com/services/rest") do |f|
       f.params['method'] = 'flickr.photos.search'
-      f.params["api_key"] = "a14ff48732412aa961d9b773ca494e7d"
+      f.params["api_key"] = ENV["flickr_api_key"]
       f.params['text'] = city
       f.params['per_page'] = 1
       f.params['format'] = 'json'
       f.params['nojsoncallback'] = 1
     end
-    photo_id = parse(response)[:photos][:photo].first[:id].to_i
-    get_photo_info(photo_id)
+    parsed = parse(response)
+    if  parsed[:stat] == 'fail' || parsed[:photos][:photo].empty?
+      return "no photo available"
+    else
+      photo_id = parsed[:photos][:photo].first[:id].to_i
+      get_photo_info(photo_id)[:photo][:urls][:url].first[:_content]
+    end
   end
 
   def self.get_photo_info(photo_id)
     response = Faraday.get("https://www.flickr.com/services/rest") do |f|
-      f.params["api_key"] = "a14ff48732412aa961d9b773ca494e7d"
+      f.params["api_key"] = ENV["flickr_api_key"]
       f.params['format'] = 'json'
       f.params['nojsoncallback'] = 1
       f.params['method'] = 'flickr.photos.getinfo'

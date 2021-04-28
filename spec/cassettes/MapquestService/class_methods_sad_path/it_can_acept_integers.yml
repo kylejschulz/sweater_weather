@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=9DNRSfALshlNLG8C1tdJE9CW8VZAiRqe&location=1345
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 28 Apr 2021 04:19:06 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1704'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Wed, 28 Apr 2021 04:19:06 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=E0E84016DBE0698E8F891A66D16C1631; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"1345"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"","adminArea3Type":"State","adminArea1":"BG","adminArea1Type":"Country","postalCode":"1345","geocodeQualityCode":"Z1XAA","geocodeQuality":"ZIP","dragPoint":false,"sideOfStreet":"N","linkId":"346738292","unknownInput":"","type":"s","latLng":{"lat":42.717751,"lng":23.287201},"displayLatLng":{"lat":42.717751,"lng":23.287201},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=9DNRSfALshlNLG8C1tdJE9CW8VZAiRqe&type=map&size=225,160&locations=42.717751,23.287201|marker-sm-50318A-1&scalebar=true&zoom=15&rand=1781472565"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Luxembourg","adminArea5Type":"City","adminArea4":"Luxembourg","adminArea4Type":"County","adminArea3":"","adminArea3Type":"State","adminArea1":"LU","adminArea1Type":"Country","postalCode":"1345","geocodeQualityCode":"Z1XAA","geocodeQuality":"ZIP","dragPoint":false,"sideOfStreet":"N","linkId":"346755953","unknownInput":"","type":"s","latLng":{"lat":49.622323,"lng":6.114791},"displayLatLng":{"lat":49.622323,"lng":6.114791},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=9DNRSfALshlNLG8C1tdJE9CW8VZAiRqe&type=map&size=225,160&locations=49.622323,6.114791|marker-sm-50318A-2&scalebar=true&zoom=15&rand=-1976098771"}]}]}'
+  recorded_at: Wed, 28 Apr 2021 04:19:06 GMT
+recorded_with: VCR 6.0.0

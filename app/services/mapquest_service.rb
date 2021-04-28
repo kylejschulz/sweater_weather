@@ -1,7 +1,7 @@
 class MapquestService
   def self.convert_city_to_lat_long(city)
     response = Faraday.get("http://www.mapquestapi.com/geocoding/v1/address") do |f|
-      f.params["key"] = "9DNRSfALshlNLG8C1tdJE9CW8VZAiRqe"
+      f.params["key"] = ENV["mapquest_api_key"]
       f.params['location'] = city
     end
     parse(response)[:results].first[:locations].first[:latLng]
@@ -9,7 +9,7 @@ class MapquestService
 
   def self.travel_time(start, destination)
     response = Faraday.get("https://www.mapquestapi.com/directions/v2/route") do |f|
-      f.params["key"] = "9DNRSfALshlNLG8C1tdJE9CW8VZAiRqe"
+      f.params["key"] = ENV["mapquest_api_key"]
       f.params['from'] = start
       f.params['to'] = destination
       f.params['outFormat'] = 'json'

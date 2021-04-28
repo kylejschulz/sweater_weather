@@ -1,7 +1,7 @@
 class OpenWeatherService
   def self.get_weather(lat, lon)
     response = Faraday.get("https://api.openweathermap.org/data/2.5/onecall") do |f|
-      f.params["appid"] = "5c5fe7d3d9e166cb296f315e26a7eb8d"
+      f.params["appid"] = ENV["open_weather_api_key"]
       f.params['lat'] = lat
       f.params['lon'] = lon
       f.params['exclude'] = 'minutely'

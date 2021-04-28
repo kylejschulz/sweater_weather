@@ -21,6 +21,6 @@ class RoadtripFacade
      end
   end
 
-  def self.valid_route(start, destination)
-  end
+  # def self.valid_route(start, destination)
+  # end
 end
