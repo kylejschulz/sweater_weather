@@ -50,12 +50,9 @@ $bundle exec figaro install
 open_weather_api_key: "open weather api key"
 mapquest_api_key: "mapquest api key"
 flickr_api_key: "flickr api key"
-CLIENT_ID: 'your google oauth client id'
-CLIENT_SECRET: 'your google oauth client secret'
+
 development:
   API_URL: 'http://localhost:3001'
-production:
-  API_URL: "your microservice heroku link"
 test:
   API_URL: 'http://localhost:3001'
 ```
@@ -79,9 +76,9 @@ $ rails s
     
 ### GET Forecast
 * Create a profile
-> Required Parameters: `:user_id` `:zipcode`
+> Required Parameters: `:location`
 ```
-POST   /api/v1/profiles
+POST   /api/v1/forecast?location=denver,co
 ```
 
 <details open>
@@ -98,10 +95,10 @@ POST   /api/v1/profiles
 </details>
 
 ### GET Background photo
-* Returns the circle of a given profile
-> Required Parameters: `:user_id` 
+* Returns the background photo for a location
+> Required Parameters: `:location` 
 ```
-GET    /api/v1/profiles/:id/circle
+GET    /api/v1/backgrounds?location=denver,co
 ```
 
 <details closed>
@@ -110,48 +107,21 @@ GET    /api/v1/profiles/:id/circle
   
   ```
 {
-    "data": [
-        {
-            "id": "2",
-            "type": "profile",
-            "attributes": {
-                "zipcode": "80305",
-                "user_id": 2,
-                "profile_picture": "http://www.google.com",
-                "username": "korn"
-            }
-        },
-        {
-            "id": "3",
-            "type": "profile",
-            "attributes": {
-                "zipcode": "80304",
-                "user_id": 3,
-                "profile_picture": "http://www.google.com",
-                "username": "slipknot"
-            }
-        },
-        {
-            "id": "4",
-            "type": "profile",
-            "attributes": {
-                "zipcode": "80303",
-                "user_id": 4,
-                "profile_picture": "http://www.google.com",
-                "username": "photos by jim"
-            }
-        },
-        {
-            "id": "5",
-            "type": "profile",
-            "attributes": {
-                "zipcode": "80544",
-                "user_id": 5,
-                "profile_picture": "http://www.google.com",
-                "username": "arteest"
-            }
+  "data": {
+    "type": "image",
+    "id": null,
+    "attributes": {
+      "image": {
+        "location": "denver,co",
+        "image_url": "https://pixabay.com/get/54e6d4444f50a814f1dc8460962930761c38d6ed534c704c7c2878dd954dc451_640.jpg",
+        "credit": {
+          "source": "pixabay.com",
+          "author": "quinntheislander",
+          "logo": "https://pixabay.com/static/img/logo_square.png"
         }
-    ]
+      }
+    }
+  }
 }
 
 ```
@@ -161,9 +131,16 @@ GET    /api/v1/profiles/:id/circle
 ### POST Create User
 * Creates a post for the given profile
 > Required Parameters: `:user_id` `:content`
-> Optional Parameters: `:link`
 ```
-POST   /api/v1/profiles/:id/post
+POST   /api/v1/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "whatever@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
 ```
 <details open>
 <summary>Sample Response</summary>
@@ -171,7 +148,14 @@ POST   /api/v1/profiles/:id/post
 
 ```
 {
-  'data': 'post created successfully'
+  "data": {
+    "type": "users",
+    "id": "1",
+    "attributes": {
+      "email": "whatever@example.com",
+      "api_key": "jgn983hy48thw9begh98h4539h4"
+    }
+  }
 }
 
 ```
@@ -180,9 +164,16 @@ POST   /api/v1/profiles/:id/post
 
 ### Post Login
 * Returns the recent posts of a given profile's circle
-> Required Parameters: `:user_id` 
+> Required Parameters: `:email, :password` 
 ```
-GET    /api/v1/profiles/:id/circle/posts
+GET    /api/v1/sessions
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "whatever@example.com",
+  "password": "password"
+}
 
 ```
 
@@ -192,78 +183,14 @@ GET    /api/v1/profiles/:id/circle/posts
   
   ```
 {
-    "data": [
-        {
-            "id": "4",
-            "type": "post",
-            "attributes": {
-                "content": "hey did you see that headline?",
-                "link": "photoURL.com",
-                "user_id": 2,
-                "created_at": "2021-04-21T20:35:56.040Z"
-            }
-        },
-        {
-            "id": "5",
-            "type": "post",
-            "attributes": {
-                "content": "hey checkout my create shoes?",
-                "link": "photoURL.com",
-                "user_id": 2,
-                "created_at": "2021-04-21T20:35:56.043Z"
-            }
-        },
-        {
-            "id": "6",
-            "type": "post",
-            "attributes": {
-                "content": "hey did you see software update?",
-                "link": "photoURL.com",
-                "user_id": 3,
-                "created_at": "2021-04-21T20:35:56.047Z"
-            }
-        },
-        {
-            "id": "7",
-            "type": "post",
-            "attributes": {
-                "content": "hey did you see I called you?",
-                "link": null,
-                "user_id": 3,
-                "created_at": "2021-04-21T20:35:56.050Z"
-            }
-        },
-        {
-            "id": "8",
-            "type": "post",
-            "attributes": {
-                "content": "hey did you see that we're not friends on FB anymore?",
-                "link": "photoURL.com",
-                "user_id": 4,
-                "created_at": "2021-04-21T20:35:56.053Z"
-            }
-        },
-        {
-            "id": "9",
-            "type": "post",
-            "attributes": {
-                "content": "hey did you see hear about that create app called 'level'?",
-                "link": "photoURL.com",
-                "user_id": 4,
-                "created_at": "2021-04-21T20:35:56.057Z"
-            }
-        },
-        {
-            "id": "10",
-            "type": "post",
-            "attributes": {
-                "content": "hey i just got hired at a sick new comapny",
-                "link": null,
-                "user_id": 5,
-                "created_at": "2021-04-21T20:35:56.060Z"
-            }
-        }
-    ]
+  "data": {
+    "type": "users",
+    "id": "1",
+    "attributes": {
+      "email": "whatever@example.com",
+      "api_key": "jgn983hy48thw9begh98h4539h4"
+    }
+  }
 }
 
 ```
@@ -273,10 +200,14 @@ GET    /api/v1/profiles/:id/circle/posts
 
 ### POST Roadtrip
 * Returns a given profile
-> Required Parameters: `:user_id` 
+> Required Parameters: `:api_key, :` 
 ```
-GET    /api/v1/profiles/:id 
-
+GET    /api/v1/road_trip 
+{
+  "origin": "Denver,CO",
+  "destination": "Pueblo,CO",
+  "api_key": "jgn983hy48thw9begh98h4539h4"
+}
 ```
 
 <details closed>
@@ -285,16 +216,19 @@ GET    /api/v1/profiles/:id
 
 ```
 {
-    "data": {
-        "id": "1",
-        "type": "profile",
-        "attributes": {
-            "zipcode": "80301",
-            "user_id": 1,
-            "profile_picture": "http://www.google.com",
-            "username": "the painter man"
-        }
+  "data": {
+    "id": null,
+    "type": "roadtrip",
+    "attributes": {
+      "start_city": "Denver, CO",
+      "end_city": "Estes Park, CO",
+      "travel_time": "2 hours, 13 minutes"
+      "weather_at_eta": {
+        "temperature": 59.4,
+        "conditions": "partly cloudy with a chance of meatballs"
+      }
     }
+  }
 }
 ```
 
