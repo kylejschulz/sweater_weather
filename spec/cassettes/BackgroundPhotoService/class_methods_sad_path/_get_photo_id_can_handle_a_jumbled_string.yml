@@ -25,12 +25,12 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sun, 25 Apr 2021 22:58:01 GMT
+      - Wed, 28 Apr 2021 03:33:39 GMT
       Server:
       - Apache/2.4.46 (Ubuntu)
       Set-Cookie:
       - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
-        expires=Tue, 25-May-2021 22:58:00 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+        expires=Fri, 28-May-2021 03:33:39 GMT; Max-Age=2592000; path=/; domain=.flickr.com
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -38,13 +38,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 7e9d74c81117937f0703aa3977d2d999.cloudfront.net (CloudFront)
+      - 1.1 65515d7b1028cd133489fb761d35fa07.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-C1
+      - IAD50-C2
       X-Amz-Cf-Id:
-      - SIj96bLqrlRV-QsmsX-ihXewErFeZIioOGr-JOP5ZN9CJgil4xsiVQ==
+      - 1YKiKJFSCSjOjlWJCdv4-SrToFXfcwhzhfAKIc2-AxBWEYo9Am8Abw==
     body:
       encoding: UTF-8
       string: '{"photos":{"page":1,"pages":0,"perpage":1,"total":"0","photo":[]},"stat":"ok"}'
-  recorded_at: Sun, 25 Apr 2021 22:57:58 GMT
+  recorded_at: Wed, 28 Apr 2021 03:33:39 GMT
 recorded_with: VCR 6.0.0

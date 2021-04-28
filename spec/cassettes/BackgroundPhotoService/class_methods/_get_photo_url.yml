@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.flickr.com/services/rest?api_key=a14ff48732412aa961d9b773ca494e7d&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=1&text=denver,%20co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '261'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 28 Apr 2021 05:04:26 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Fri, 28-May-2021 05:04:26 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6b8cdd1ce925ccd88cc918dd35811d07.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C1
+      X-Amz-Cf-Id:
+      - tfsSa8BMdYy8faPDQU4RnyuuvSTH8KbifAWbcziCklojOal2X8VLjg==
+    body:
+      encoding: UTF-8
+      string: '{"photos":{"page":1,"pages":288738,"perpage":1,"total":"288738","photo":[{"id":"51142415522","owner":"124159081@N07","secret":"5732e4d302","server":"65535","farm":66,"title":"BN
+        7145 UP 2491 SB at Tomah CO","ispublic":1,"isfriend":0,"isfamily":0}]},"stat":"ok"}'
+  recorded_at: Wed, 28 Apr 2021 05:04:26 GMT
+- request:
+    method: get
+    uri: https://www.flickr.com/services/rest?api_key=a14ff48732412aa961d9b773ca494e7d&format=json&method=flickr.photos.getinfo&nojsoncallback=1&photo_id=51142415522
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 28 Apr 2021 05:04:26 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Fri, 28-May-2021 05:04:26 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 b5e757a7da6f6fe6261f56a8a9646881.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C1
+      X-Amz-Cf-Id:
+      - IssAorVJj6Med42GqoKxe_H9FaCy9lttG2xU7sc7KxfAdtxUFDsyHw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photo":{"id":"51142415522","secret":"5732e4d302","server":"65535","farm":66,"dateuploaded":"1619563931","isfavorite":0,"license":"0","safety_level":"0","rotation":0,"originalsecret":"6a010260c2","originalformat":"jpg","owner":{"nsid":"124159081@N07","username":"geneseewyoming","realname":"John
+        Frantz","location":"Allentown, PA, USA","iconserver":"3893","iconfarm":4,"path_alias":null},"title":{"_content":"BN
+        7145 UP 2491 SB at Tomah CO"},"description":{"_content":"On the morning of
+        December 3, 193, I left Cheyenne and headed south of Denver to shoot the Joint
+        Line.  This was my first train.  Kodachrome scan."},"visibility":{"ispublic":1,"isfriend":0,"isfamily":0},"dates":{"posted":"1619563931","taken":"2021-04-27
+        18:49:15","takengranularity":0,"takenunknown":"1","lastupdate":"1619584374"},"views":"121","editability":{"cancomment":0,"canaddmeta":0},"publiceditability":{"cancomment":1,"canaddmeta":0},"usage":{"candownload":1,"canblog":0,"canprint":0,"canshare":1},"comments":{"_content":"0"},"notes":{"note":[]},"people":{"haspeople":0},"tags":{"tag":[]},"urls":{"url":[{"type":"photopage","_content":"https:\/\/www.flickr.com\/photos\/124159081@N07\/51142415522\/"}]},"media":"photo"},"stat":"ok"}'
+  recorded_at: Wed, 28 Apr 2021 05:04:26 GMT
+recorded_with: VCR 6.0.0

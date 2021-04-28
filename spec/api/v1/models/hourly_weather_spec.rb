@@ -8,10 +8,10 @@ RSpec.describe HourlyWeather, type: :model do
 
       expect(weather_data).to be_a(Hash)
       expect(hourly_weather).to be_a(HourlyWeather)
-      expect(hourly_weather.time).to eq("2021-04-24 14:00:00")
-      expect(hourly_weather.temperature).to eq(55.67)
-      expect(hourly_weather.conditions).to eq("scattered clouds")
-      expect(hourly_weather.icon).to eq("03d")
+      expect(hourly_weather.time).to eq("2021-04-27 23:00:00")
+      expect(hourly_weather.temperature).to eq(41.72)
+      expect(hourly_weather.conditions).to eq("moderate rain")
+      expect(hourly_weather.icon).to eq("10n")
     end
   end
 end

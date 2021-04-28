@@ -1,36 +1,43 @@
 require 'rails_helper'
 
-RSpec.describe "When i make a backgrounds request" do
+RSpec.describe "Backgrounds request" do
   describe "it can return happy paths" do
     it "returns all the appropriate data", :vcr do
       get '/api/v1/backgrounds?location=denver,co'
-      expect(response).to be_successful
-
+      expect(@response).to be_successful
       response = parse(@response)
+
       expect(response[:data].count).to eq(3)
       expect(response[:data].keys).to eq([:id, :type, :attributes])
       expect(response[:data][:id]).to be_nil
-      expect(response[:data][:type]).to eq('forecast')
-      expect(response[:data][:attributes].keys).to eq([:current_weather, :daily_weather, :hourly_weather])
-      expect(response[:data][:attributes][:current_weather].keys).to eq([:datetime, :sunrise, :sunset, :temperature, :feels_like, :humidity, :uvi, :visibility, :conditions, :icon])
-      expect(response[:data][:attributes][:daily_weather].first.keys).to eq([:datetime, :sunrise, :sunset, :max_temp, :min_temp, :conditions, :icon])
-      expect(response[:data][:attributes][:hourly_weather].first.keys).to eq([:time, :temperature, :conditions, :icon])
+      expect(response[:data][:type]).to eq('image')
+      expect(response[:data][:attributes].keys).to eq([:image_url])
+      expect(response[:data][:attributes][:image_url]).to eq('https://www.flickr.com/photos/mudsharkalex/51142231625/')
     end
   end
   describe "it can return sad paths" do
-    it "returns 404 when given invalid city", :vcr do
-      get '/api/v1/forecast?location= '
-      expect(response).to be_successful
+    it "returns 42 when given empty string", :vcr do
+      get '/api/v1/backgrounds?location= '
 
-      response = parse(@response)
-      expect(response[:data].count).to eq(3)
-      expect(response[:data].keys).to eq([:id, :type, :attributes])
-      expect(response[:data][:id]).to be_nil
-      expect(response[:data][:type]).to eq('forecast')
-      expect(response[:data][:attributes].keys).to eq([:current_weather, :daily_weather, :hourly_weather])
-      expect(response[:data][:attributes][:current_weather].keys).to eq([:datetime, :sunrise, :sunset, :temperature, :feels_like, :humidity, :uvi, :visibility, :conditions, :icon])
-      expect(response[:data][:attributes][:daily_weather].first.keys).to eq([:datetime, :sunrise, :sunset, :max_temp, :min_temp, :conditions, :icon])
-      expect(response[:data][:attributes][:hourly_weather].first.keys).to eq([:time, :temperature, :conditions, :icon])
+      expect(@response).to_not be_successful
+      expect(@response.status).to eq(422)
+      expect(@response.body).to eq("please enter a valid city")
+    end
+
+    it "returns 42 when given integers", :vcr do
+      get '/api/v1/backgrounds?location=12345'
+
+      expect(@response).to_not be_successful
+      expect(@response.status).to eq(422)
+      expect(@response.body).to eq("please enter a valid city")
+    end
+
+    it "returns 42 when given jumbled letters", :vcr do
+      get '/api/v1/backgrounds?location=akjfljhfs'
+
+      expect(@response).to_not be_successful
+      expect(@response.status).to eq(422)
+      expect(@response.body).to eq("photo not found")
     end
   end
 end
