@@ -19,9 +19,13 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
-      - run: 
-          name: setup DB 
-          command: rails db:{drop,create,migrate,seed}
+      - run: sudo apt install -y postgresql-client || true 
+      - run:
+          name: Database Setup
+          command: |
+            bundle exec rake db:create
+
       - run: 
           name: running tests 
-          command: bundle exec rspec 
+          command: bundle exec rspec
+            
