@@ -27,13 +27,13 @@ RSpec.describe "Forecast request" do
       expect(@response.body).to eq('please enter a valid city')
     end
 
-    xit "returns 422 when given jumbled letters", :vcr do
-      get '/api/v1/forecast?location=dsfakjfds;kdfsljkf'
-
-      expect(@response).to_not be_successful
-      expect(@response.status).to eq(422)
-      expect(@response.body).to eq('please enter a valid city')
-    end
+    # xit "returns 422 when given jumbled letters", :vcr do
+    #   get '/api/v1/forecast?location=dsfakjfds;kdfsljkf'
+    #
+    #   expect(@response).to_not be_successful
+    #   expect(@response.status).to eq(422)
+    #   expect(@response.body).to eq('please enter a valid city')
+    # end
 
     it "returns 422 when given integers", :vcr do
       get '/api/v1/forecast?location=12457'

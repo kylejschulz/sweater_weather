@@ -69,14 +69,14 @@ RSpec.describe "Roadtrip request" do
       expect(@response.status).to eq(422)
     end
 
-    xit "returns 422 when given jumbled string", :vcr do
-      headers = { "CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-      params = { 'origin': 'Denver,CO', 'destination': 'ljhfasdljhdsf', 'api_key': @user.api_key }
-      post '/api/v1/road_trip', :params => params.to_json, :headers => headers
-
-      expect(@response).to_not be_successful
-      expect(@response.body).to eq("please enter valid destination and origin")
-      expect(@response.status).to eq(422)
-    end
+    # xit "returns 422 when given jumbled string", :vcr do
+    #   headers = { "CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
+    #   params = { 'origin': 'Denver,CO', 'destination': 'ljhfasdljhdsf', 'api_key': @user.api_key }
+    #   post '/api/v1/road_trip', :params => params.to_json, :headers => headers
+    #
+    #   expect(@response).to_not be_successful
+    #   expect(@response.body).to eq("please enter valid destination and origin")
+    #   expect(@response.status).to eq(422)
+    # end
   end
 end
