@@ -7,7 +7,7 @@ RSpec.describe DailyWeather, type: :model do
       daily_weather = DailyWeather.new(weather_data)
 
       expect(daily_weather).to be_a(DailyWeather)
-      expect(daily_weather.datetime).to eq("2021-04-27 14:00:00")
+      expect(daily_weather.datetime).to eq("2021-04-27 18:00:00")
       expect(daily_weather.sunrise).to eq("08:05")
       expect(daily_weather.sunset).to eq("21:49")
       expect(daily_weather.max_temp).to eq(59.7)

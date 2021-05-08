@@ -7,7 +7,7 @@ RSpec.describe CurrentWeather, type: :model do
       current_weather = CurrentWeather.new(weather_data[:current])
 
       expect(current_weather).to be_a(CurrentWeather)
-      expect(current_weather.datetime).to eq("2021-04-27 23:42:49")
+      expect(current_weather.datetime).to eq("2021-04-28 03:42:49")
       expect(current_weather.sunrise).to eq("08:05")
       expect(current_weather.sunset).to eq("21:49")
       expect(current_weather.temperature).to eq(40.96)
